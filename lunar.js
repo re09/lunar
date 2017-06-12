@@ -191,7 +191,7 @@ var lunar = {
     },
 
     /**
-     * 获取生肖 以农历正月初一为界, 与大搜日历结果保持一致
+     * 获取生肖 以农历正月初一为界, 与百度万年历结果保持一致
      * @param {number} y 年
      * @param {number} m 月
      * @param {number} d 日
