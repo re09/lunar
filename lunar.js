@@ -6,10 +6,10 @@
 var lunar = {
 
     // 天干
-    tianGan: ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'],
+    TianGan: ['甲', '乙', '丙', '丁', '戊', '己', '庚', '辛', '壬', '癸'],
 
     // 地支
-    diZhi: ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'],
+    DiZhi: ['子', '丑', '寅', '卯', '辰', '巳', '午', '未', '申', '酉', '戌', '亥'],
 
     // 生肖
     Animals: ['鼠', '牛', '虎', '兔', '龙', '蛇', '马', '羊', '猴', '鸡', '狗', '猪'],
@@ -88,7 +88,25 @@ var lunar = {
     cache: {},
 
     // 获取干支年
-    getGzYear: function () {
+    getGzYear: function (y) {
+
+        var diff = y - 3;
+        var gIndex = diff % 10;
+        var zIndex = diff % 12;
+
+        if (gIndex === 0) {
+
+            gIndex = 10;
+
+        }
+
+        if (zIndex === 0) {
+
+            zIndex = 12;
+
+        }
+
+        return this.TianGan[gIndex - 1] + this.DiZhi[zIndex - 1];
 
     },
 
